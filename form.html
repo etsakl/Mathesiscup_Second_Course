@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>example form</title>
+  <style media="screen">
+    label,
+    input, .skills {
+      margin: 0.2em;
+      padding: 0.2em;
+      font-size: 1em;
+      font-family: ubuntu;
+
+    }
+  </style>
+</head>
+
+<body>
+  <form class="firstForm" action="index.html" method="post">
+    <label for="yourName">Όνομα:</label>
+    <input type="text" name="yourName" value="" id="yourName" placeholder="Δώσε Όνομα" autofocus size="30" required>
+    <br>
+    <label for="surName">Επώνυμο:</label>
+    <input type="text" name="surname" value=" " id="surname" placeholder="Δώσε επίθετο" size="30" required>
+    <br>
+    <label for="age">Ηλικία:</label>
+    <input type="number" name="age" value="30" id="mySubmit" min="17" max="117"> <br>
+    <input type="radio" name="gender" value="" checked>ΑΝΔΡΑΣ</input>
+    <input type="radio" name="gender" value="">ΓΥΝΑΙΚΑ</input><br>
+    <hr>
+    <label for="birthdate"></label>
+    <input type="date" name="birthdate" value="" min="01/01/1900" max="01/01/2004">
+    <hr>
+    <label for="item1">I like .. </label>
+    <input type="checkbox" name="nature" value="">
+    <label for="nature">in the wild</label>
+    <hr><br>
+    <div class="skills" id="aRange">I am a newbie(=0). I am en expert(=100) </div>
+    <label for="aRange"> HTML5 </label>
+    <input type="range" name="html" value="" id "HTML" min=5 max=100 step=1 value=5>
+    <output name="result"></output>
+
+
+    <hr><br>
+    <input type="submit" name="submit" value="submit">
+
+
+    <!---
+    <select class="" name="">
+      <option value=""></option>
+    </select>
+
+    <textarea name="name" rows="8" cols="80"></textarea>
+
+    <fieldset>
+      <legend></legend>
+    </fieldset>
+
+    <data value=""></data>
+
+    <output name="result"></output>
+
+    <button type="button" name="button"></button>
+    --->
+  </form>
+</body>
+
+</html>
