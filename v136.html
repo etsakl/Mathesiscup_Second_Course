@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body {
+                width:500px;
+                font-family: Arial, Helvetica, sans-serif;}
+            form{
+                background-color: #cfd3ce;
+                padding: 2em;
+            }
+            label{
+                font-size: 0.8em;
+            }   
+            fieldset{
+                width:400px;
+                }
+            input{
+                width:100%;
+                padding: 1em;
+                border: 1px solid O#bbbbbb;
+                border-radius: 5px;
+                margin-top: 1em;
+                box-sizing: border-box;
+            }
+            input[type=submit]{
+                background-color: #34626c;
+                font-size: 1.2em;
+                color:white;
+            }
+        </style>
+    </head>
+    <body>
+        <form onsubmit="return(validate());">
+            <fieldset>
+                <legend>εγγραφή χρήστη</legend>
+                <label for="email">Ταυτότητα χρήστη(email)</label><br>
+                <input type="email" id="email" name="email" required
+                    autocomplete="new-password"
+                    placeholder="δώστε το email σας"><br>
+                <label for="pass1">Κωδικός πρόσβασης:</label><br>
+                <input type="password" id="pass1" name="pass1" required
+                    pattern="^(?=[^0-9]*[0-9])(?=[^a-z]*[a-z]).{5,}$"
+                    placeholder="κωδικός 5 τουλάχιστον χαρακτήρων με αριθμούς και γράμματα"><br>
+                <label for="pass2">Επιβεβαίωση κωδικού:</label><br>
+                <input type="password" id="pass2" name="pass2" required
+                    pattern="^(?=[^0-9]*[0-9])(?=[^a-z]*[a-z]).{5,}$"
+                    placeholder="επαναλάβατε τον κωδικό που δώσατε πιο πάνω"><br>
+                <input type="submit" value="υποβολή">
+            </fieldset>
+        </form>
+        <script>
+            function validate(){
+                if (document.querySelector("#pass1").value===document.querySelector("#pass2").value)
+                    return true;
+                alert("οι δύο κωδικοί δεν είναι ίδιοι");
+                return false;
+            }
+        </script>
+    </body>
+</html>

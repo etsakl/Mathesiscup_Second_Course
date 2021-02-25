@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>v137 try catch</title>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                }
+            input,label,output{
+                font-size: 1.5rem;
+                margin:1rem;
+            }
+            output{
+                color:red;
+            }
+        </style>
+    </head>
+    <body>
+        <label for="id1">Εισσάγεται αριθμό από 1 έως 100:</label><br>
+        <input id="id1" type="text"><br>
+        <input type="button" value="Έλεγχος" onclick="validate()">
+        <hr>
+        <output id="info"></output>
+        <script>
+            function validate(){
+                const message=document.querySelector("#info");
+                let x=document.querySelector("#id1").value;
+                message.innerHTML="";
+                try{
+                    if (x.trim()=="") throw "κενή είσοδο";
+                    if (isNaN(x)) throw "μη αριθμητική είσοδο";
+                    x=Number(x);
+                    if (x<1) throw "τιμή μικρότερη του 1";
+                    if (x>100) throw "τιμή μεγαλύτερη του 100";
+                }
+                catch(err){
+                    message.innerHTML="Έδωσες "+err;
+                }
+
+            }
+        </script>
+
+
+    </body>
+</html>
